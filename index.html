@@ -5,8 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="main.css" />
   </head>
   <body>
+    <header id="header">
+      <div class="left_side">
+        <div class="logo"><h4>NETFLIX</h4></div>
+        <div class="home">
+          <a href="">Home</a>
+        </div>
+        <div class="shows">
+          <a href="shows.index.html " target="_self">Shows</a>
+        </div>
+        <div class="movies">
+          <a href="movies.index.html" target="_self">Movies</a>
+        </div>
+        <div class="popular"><a href="">New&Popular</a></div>
+        <div class="my_list"><a href="">My List</a></div>
+      </div>
+      <div class="right_side">
+        <input id="searchInput" type="search" placeholder="search" />
+        <div class="search">
+          <img
+            id="searchInp"
+            class="search"
+            src="pics/elisariva-icon-1971133_1920.png"
+            alt=""
+          />
+        </div>
+
+ 
+      </div>
+    </header>
+    <main>
+      <h3>Bingeworthy TV Shows</h3>
+      <div id="twshows" class="tvShows"></div>
+      <h3>Categories for you</h3>
+      <div id="categ" class="categories"></div>
+      <h3>Horror</h3>
+      <div id="movie1" class="movie1"></div>
+      <h3>New-Arival</h3>
+      <div id="movie2" class="movie2"></div>
+    </main>
+
     <script src="js.js"></script>
   </body>
 </html>

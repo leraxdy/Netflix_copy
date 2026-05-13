@@ -1,0 +1,23 @@
+html,
+body {
+  height: 110%;
+  width: 100%;
+  margin: 0px;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.959);
+}
+.prof {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  background-color: darkcyan;
+  position: absolute;
+  top: 70px;
+  left: 85%;
+}
+a {
+  list-style: none;
+  color: white;
+  text-decoration: none;
+}
