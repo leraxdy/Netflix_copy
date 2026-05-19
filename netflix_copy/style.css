@@ -1,0 +1,51 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+    background-image: url("../pic/hero-img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#log_in{
+    height: 80%;
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.682);
+    padding: 5%;
+    box-sizing: border-box;
+}
+h1{
+    color: white;
+    margin: 5;
+}
+#input_box{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50%;
+}
+input{
+    background-color: rgba(78, 77, 77, 0.862);
+    color: white;
+    height: 20%;
+    border-radius: 3%;
+}
+#in{
+    background-color: red;
+    height: 20%;
+    margin-top: 5;
+}
+#checkbox{
+    height: 5%;
+    display: inline-block;
+}
+h5{
+    color: white;
+    margin: 0;
+    display: inline-block;
+}
