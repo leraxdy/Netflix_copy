@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix — Для детей</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="hdr" id="hdr">
+    <!-- Логотип NETFLIX  -->
+    <a href="#" class="hdr-logo-link">
+      <img class="hdr-logo" src="netflix-logo.png" alt="Netflix">
+    </a>
+
+    <nav>
+      <ul class="hdr-nav">
+        <li><a href="#" class="on">Главная</a></li>
+        <li><a href="#">Герои</a></li>
+        <li><a href="#">Сериалы</a></li>
+        <li><a href="#">Мультфильмы</a></li>
+        <li><a href="#">Мой список</a></li>
+        <li><a href="#">Поиск по языку</a></li>
+      </ul>
+    </nav>
+
+    <div class="hdr-right">
+      <button class="hdr-icon" title="Поиск">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+      </button>
+      <button class="hdr-icon" title="Уведомления">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+        </svg>
+      </button>
+      <span class="kids-tag">👦 Для детей</span>
+      <div class="hdr-avatar">К</div>
+    </div>
+  </header>
+
+  <!-- ГЕРОЙ-БАННЕР -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-ov"></div>
+
+    <!-- верхняя зона контент фильма -->
+    <div class="hero-content-zone">
+      <div class="hero-cnt">
+        <div class="hero-brand">
+          <img src="netflix-logo.png" alt="Netflix">
+        </div>
+        <div class="hero-title" id="hero-title">Популярные мультфильмы</div>
+        <div class="hero-meta" id="hero-meta">
+          <span style="color:#46d369;font-weight:700">Детский режим</span>
+          <span class="hero-badge">0+</span>
+          <span>Для всей семьи</span>
+        </div>
+        <p class="hero-desc" id="hero-desc">Лучшие мультфильмы и детские сериалы — всё только для детей!</p>
+        <div class="hero-btns">
+          <button class="btn-play">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Смотреть
+          </button>
+          <button class="btn-info" id="hero-info-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            Подробнее
+          </button>
+        </div>
+      </div>
+      <div class="hero-age" id="hero-age">0+</div>
+    </div>
+
+    <!-- Ряд героев поверх постера -->
+    <div class="heroes-row" id="heroes-row">
+      <h2 class="heroes-title">Герои</h2>
+      <div class="heroes-track" id="heroes-track">
+        <!-- заполняется через JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- РЯДЫ КАРТОЧЕК -->
+  <main class="rows" id="rows"></main>
+
+  <!-- ФУТЕР -->
+  <footer class="footer">
+    <div class="footer-soc">
+      <a href="#" title="Facebook">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="#" title="Instagram">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+        </svg>
+      </a>
+      <a href="#" title="Twitter">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Аудиоописание</a><a href="#">Центр помощи</a>
+      <a href="#">Вакансии</a><a href="#">Подарочные карты</a>
+      <a href="#">Медиацентр</a><a href="#">Правила использования</a>
+      <a href="#">Конфиденциальность</a><a href="#">Настройки cookie</a>
+      <a href="#">Корпоративная информация</a><a href="#">Контакты</a>
+      <a href="#">Проверка совместимости</a><a href="#">Только на Netflix</a>
+    </div>
+    <div class="footer-code">Код для обращения в службу поддержки</div>
+    <p class="footer-copy">© 1997–2026 Netflix, Inc.</p>
+  </footer>
+
+  <!-- МОДАЛЬНОЕ ОКНО -->
+  <div class="modal-bg" id="modalBg" onclick="handleModalBgClick(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Глобальное превью карточки -->
+  <div id="card-popup">
+    <img class="cp-img" src="" alt="" id="popup-img">
+    <div class="cp-body">
+      <div class="cp-actions">
+        <button class="cp-btn cp-play" id="popup-play">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button class="cp-btn cp-add">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </button>
+        <button class="cp-btn cp-like">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"/></svg>
+        </button>
+        <button class="cp-btn cp-more" id="popup-more">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+      </div>
+      <div class="cp-match" id="popup-match"></div>
+      <div class="cp-badges">
+        <span class="cp-age">0+</span>
+        <span class="cp-seasons" id="popup-type"></span>
+        <span class="cp-hd">HD</span>
+        <span class="cp-info-lbl">Эпизоды и информация</span>
+      </div>
+      <div class="cp-genres" id="popup-genres"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
