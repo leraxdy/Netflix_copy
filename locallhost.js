@@ -1,6 +1,7 @@
 // log in
 
 const loginButton = document.getElementById('in');
+const children_mode = document.getElementById('child_mode');
 
 loginButton.addEventListener('click', () => {
 
@@ -28,9 +29,14 @@ loginButton.addEventListener('click', () => {
 
     localStorage.setItem('user', email);
 
-    alert('Login successful');
+    if(children_mode.checked){
+        localStorage.setItem('user', email);
+        
+        window.location.href = './index_v.html';       
+    } else{
 
     window.location.href = './index_s.html';
+    }
 
 });
 
