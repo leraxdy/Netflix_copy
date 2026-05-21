@@ -1,77 +1,88 @@
-// log in
+// REGISTER
 
-const loginButton = document.getElementById('in');
-const children_mode = document.getElementById('child_mode');
+const registerButton = document.getElementById('register');
 
-loginButton.addEventListener('click', () => {
+registerButton.addEventListener('click', () => {
 
+    const username = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-
     const password = document.getElementById('password').value;
+    const repeatPassword = document.getElementById('repeat_password').value;
+    const childrenMode = document.getElementById('child_mode');
 
-    const user = JSON.parse(localStorage.getItem(email));
-
-    if (!user) {
-
-        alert('User not found');
-
+    // Проверка паролей
+    if (password !== repeatPassword) {
+        alert('Passwords do not match');
         return;
-
     }
 
-    if (user.password !== password) {
-
-        alert('Wrong password');
-
+    // Проверяем существует ли пользователь
+    if (localStorage.getItem(email)) {
+        alert('User already exists');
         return;
-
     }
 
-    localStorage.setItem('user', email);
+    // Создаем объект пользователя
+    const user = {
+        username,
+        email,
+        password
+    };
 
-    if(children_mode.checked){
-        localStorage.setItem('user', email);
-        
-        window.location.href = './index_v.html';       
-    } else{
+    // Сохраняем в localStorage
+    localStorage.setItem(email, JSON.stringify(user));
 
-    window.location.href = './index_s.html';
+    // Запоминаем текущего пользователя
+    localStorage.setItem('currentUser', email);
+
+    alert('Registration successful');
+
+    // Переход на нужную страницу
+    if (childrenMode.checked) {
+        window.location.href = './index_v.html';
+    } else {
+        window.location.href = './index_s.html';
     }
 
 });
 
-// log out
 
-const button = document.getElementById('in');
 
-button.addEventListener('click', () => {
+// LOGIN
 
-    const username = document.getElementById('name').value;
+const loginButton = document.getElementById('login');
+
+loginButton.addEventListener('click', () => {
 
     const email = document.getElementById('email').value;
-
     const password = document.getElementById('password').value;
+    const childrenMode = document.getElementById('child_mode');
 
-    const repeatPassword = document.getElementById('repeat_password').value;
+    // Получаем пользователя
+    const user = JSON.parse(localStorage.getItem(email));
 
-    if (password !== repeatPassword) {
-
-        alert('Passwords do not match');
-
+    // Проверка существования
+    if (!user) {
+        alert('User not found');
         return;
-
     }
 
-    const user = {
+    // Проверка пароля
+    if (user.password !== password) {
+        alert('Wrong password');
+        return;
+    }
 
-        username,
-        email,
-        password
+    // Запоминаем текущего пользователя
+    localStorage.setItem('currentUser', email);
 
-    };
+    alert('Login successful');
 
-    localStorage.setItem(email, JSON.stringify(user));
-
-    alert('Registration successful');
+    // Переход
+    if (childrenMode.checked) {
+        window.location.href = './index_v.html';
+    } else {
+        window.location.href = './index_s.html';
+    }
 
 });
