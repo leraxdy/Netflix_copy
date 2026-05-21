@@ -22,30 +22,67 @@ h1{
     color: white;
     margin: 5;
 }
+h5{
+    margin-bottom: 0;
+}
 #input_box{
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 50%;
+    justify-content: space-around;
+    height: 70%;
 }
 input{
     background-color: rgba(78, 77, 77, 0.862);
     color: white;
-    height: 20%;
+    height: 15%;
     border-radius: 3%;
 }
 #in{
     background-color: red;
-    height: 20%;
+    height: 15%;
     margin-top: 5;
 }
 #checkbox{
-    height: 5%;
+    height: 60%;
     display: inline-block;
 }
-h5{
+#emblem{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+#logo{
+    height: 50px;
+}
+#check{
+    display: flex;
+    justify-content: space-between;
+    color: rgb(143, 142, 142);
+}
+#help{
+    margin-left: 10px;
+    color: rgb(143, 142, 142);
+    text-decoration: none;
+}
+#inform{
+    color: rgb(143, 142, 142);
+    display: flex;
+    flex-direction: column;
+}
+#sign_up{
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#sign_page{
     color: white;
+    text-decoration: none;
+}
+#learn_page{
+    color: rgb(25, 25, 193);
+    text-decoration: none;
+}
+#warning{
     margin: 0;
-    display: inline-block;
 }
