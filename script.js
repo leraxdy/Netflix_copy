@@ -1,4 +1,4 @@
-const button = document.getElementById('in');
+const button = document.getElementById('register');
 
 button.addEventListener('click', async () => {
 
@@ -53,7 +53,7 @@ button.addEventListener('click', async () => {
 
 });
 
-const loginButton = document.getElementById('in');
+const loginButton = document.getElementById('login');
 const children_mode = document.getElementById('child_mode');
 
 

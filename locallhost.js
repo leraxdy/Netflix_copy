@@ -1,88 +1,108 @@
-// REGISTER
+// REGISTER - для страницы Sign_up.html
+if (window.location.pathname.includes('Sign_up.html') || window.location.pathname.includes('sign_up.html')) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const registerButton = document.getElementById('register');
+        
+        if (registerButton) {
+            registerButton.addEventListener('click', (event) => {
+                event.preventDefault();
 
-const registerButton = document.getElementById('register');
+                const username = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const repeatPassword = document.getElementById('repeat_password').value;
+                const childrenMode = document.getElementById('child_mode');
 
-registerButton.addEventListener('click', () => {
+                // Проверка на пустые поля
+                if (!username || !email || !password || !repeatPassword) {
+                    alert('Please fill all fields');
+                    return;
+                }
 
-    const username = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const repeatPassword = document.getElementById('repeat_password').value;
-    const childrenMode = document.getElementById('child_mode');
+                // Проверка паролей
+                if (password !== repeatPassword) {
+                    alert('Passwords do not match');
+                    return;
+                }
 
-    // Проверка паролей
-    if (password !== repeatPassword) {
-        alert('Passwords do not match');
-        return;
-    }
+                // Проверяем существует ли пользователь
+                if (localStorage.getItem(email)) {
+                    alert('User already exists');
+                    return;
+                }
 
-    // Проверяем существует ли пользователь
-    if (localStorage.getItem(email)) {
-        alert('User already exists');
-        return;
-    }
+                // Создаем объект пользователя
+                const user = {
+                    username,
+                    email,
+                    password,
+                    childMode: childrenMode.checked
+                };
 
-    // Создаем объект пользователя
-    const user = {
-        username,
-        email,
-        password
-    };
+                // Сохраняем в localStorage
+                localStorage.setItem(email, JSON.stringify(user));
 
-    // Сохраняем в localStorage
-    localStorage.setItem(email, JSON.stringify(user));
-
-    // Запоминаем текущего пользователя
-    localStorage.setItem('currentUser', email);
-
-    alert('Registration successful');
-
-    // Переход на нужную страницу
-    if (childrenMode.checked) {
-        window.location.href = './index_v.html';
-    } else {
-        window.location.href = './index_s.html';
-    }
-
-});
-
+                // Запоминаем текущего пользователя
+                localStorage.setItem('currentUser', email);
 
 
-// LOGIN
 
-const loginButton = document.getElementById('login');
+                // Переход на нужную страницу
+                if (childrenMode.checked) {
+                    window.location.href = './index_v.html';
+                } else {
+                    window.location.href = './index_s.html';
+                }
+            });
+        }
+    });
+}
 
-loginButton.addEventListener('click', () => {
+// LOGIN - для страницы index.html
+else if (window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginButton = document.getElementById('login');
+        
+        if (loginButton) {
+            loginButton.addEventListener('click', (event) => {
+                event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const childrenMode = document.getElementById('child_mode');
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const childrenMode = document.getElementById('child_mode');
 
-    // Получаем пользователя
-    const user = JSON.parse(localStorage.getItem(email));
+                // Проверка на пустые поля
+                if (!email || !password) {
+                    alert('Please fill all fields');
+                    return;
+                }
 
-    // Проверка существования
-    if (!user) {
-        alert('User not found');
-        return;
-    }
+                // Получаем пользователя
+                const user = JSON.parse(localStorage.getItem(email));
 
-    // Проверка пароля
-    if (user.password !== password) {
-        alert('Wrong password');
-        return;
-    }
+                // Проверка существования
+                if (!user) {
+                    alert('User not found');
+                    return;
+                }
 
-    // Запоминаем текущего пользователя
-    localStorage.setItem('currentUser', email);
+                // Проверка пароля
+                if (user.password !== password) {
+                    alert('Wrong password');
+                    return;
+                }
 
-    alert('Login successful');
+                // Запоминаем текущего пользователя
+                localStorage.setItem('currentUser', email);
 
-    // Переход
-    if (childrenMode.checked) {
-        window.location.href = './index_v.html';
-    } else {
-        window.location.href = './index_s.html';
-    }
 
-});
+                // Переход
+                if (childrenMode.checked) {
+                    window.location.href = './index_v.html';
+                } else {
+                    window.location.href = './index_s.html';
+                }
+            });
+        }
+    });
+}

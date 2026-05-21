@@ -38,7 +38,7 @@ input{
     height: 20%;
     border-radius: 3%;
 }
-#in{
+.in{
     background-color: red;
     height: 20%;
     margin-top: 5;
