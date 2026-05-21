@@ -1,0 +1,91 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+
+    background-image: url("../pic/hero-img.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#log_in{
+    height: 80%;
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.682);
+    padding: 5%;
+    box-sizing: border-box;
+}
+h1{
+    color: white;
+    margin: 5;
+}
+h5{
+    margin-bottom: 0;
+}
+#input_box{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70%;
+}
+input{
+    background-color: rgba(78, 77, 77, 0.862);
+    color: white;
+    height: 15%;
+    border-radius: 3%;
+}
+#in{
+    background-color: red;
+    height: 15%;
+    margin-top: 5;
+}
+#checkbox{
+    height: 60%;
+    display: inline-block;
+}
+#emblem{
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+#logo{
+    height: 50px;
+}
+#check{
+    display: flex;
+    flex-direction: column;
+    color: rgb(143, 142, 142);
+}
+#help{
+    margin-left: 10px;
+    color: rgb(143, 142, 142);
+    text-decoration: none;
+}
+#inform{
+    color: rgb(143, 142, 142);
+    display: flex;
+    flex-direction: column;
+}
+#sign_up{
+    display: flex;
+    margin-bottom: 2px;
+}
+#sign_page{
+    color: white;
+    text-decoration: none;
+}
+#learn_page{
+    color: rgb(25, 25, 193);
+    text-decoration: none;
+}
+#warning{
+    margin: 0;
+}
+#remember{
+    display: flex;
+    justify-content: space-between;
+}
