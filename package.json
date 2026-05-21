@@ -1,5 +1,9 @@
 {
   "dependencies": {
     "mongoose": "^9.6.2"
-  }
+  },
+  "scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+}
 }
