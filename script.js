@@ -54,55 +54,68 @@ button.addEventListener('click', async () => {
 });
 
 const loginButton = document.getElementById('in');
+const children_mode = document.getElementById('child_mode');
+
+
 
 if (loginButton) {
-
+    
     loginButton.addEventListener('click', async () => {
-
+        
         const email = document.getElementById('email').value;
-
+        
         const password = document.getElementById('password').value;
 
         try {
-
+            
             const response = await fetch('http://localhost:5000/login', {
-
+                
                 method: 'POST',
-
+                
                 headers: {
                     'Content-Type': 'application/json'
                 },
-
+                
                 body: JSON.stringify({
-
+                    
                     email,
                     password
-
+                    
                 })
-
+                
             });
-
+            
             const data = await response.json();
-
+            
             console.log(data);
-
-            alert(data.message);
-
+            
+            
             // SUCCESS LOGIN
             if (data.message === 'Login successful') {
-
+                
                 localStorage.setItem('user', email);
 
-                window.location.href = 'home.html';
+                if(children_mode.checked){
+                    localStorage.setItem('user', email);
+                    
+                    window.location.href = './index_v.html';       
+                } else{
 
+                window.location.href = './index_s.html';
+                }
+            } else{
+                alert('Passwords or Email do not match');
             }
-
+            
         } catch (err) {
-
+            
             console.log(err);
-
+            
         }
-
+        
+        
     });
 
+    
 }
+

@@ -57,7 +57,7 @@ input{
 }
 #check{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     color: rgb(143, 142, 142);
 }
 #help{
@@ -72,8 +72,7 @@ input{
 }
 #sign_up{
     display: flex;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 #sign_page{
     color: white;
@@ -85,4 +84,8 @@ input{
 }
 #warning{
     margin: 0;
+}
+#remember{
+    display: flex;
+    justify-content: space-between;
 }
